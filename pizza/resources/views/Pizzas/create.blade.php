@@ -40,6 +40,6 @@
         </form>
         
     </div>
-    <div class="wrapper"><a href="/pizzas"><- Back to all pizzas</a></div>
+    <div class="wrapper"><a class="normalizer" href="{{ route('pizza.home')}}">HOME</a></div>
     
 @endsection

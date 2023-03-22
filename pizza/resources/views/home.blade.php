@@ -15,7 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
-                    <p><a href="/pizzas">Show All Orders</a></p>
+                    <p><a class="normalizer" style="color: blueviolet" href="{{ route('pizza.index')}}">Show All Orders</a></p>
                 </div>
             </div>
         </div>

@@ -15,18 +15,15 @@ use App\Http\Controllers\PizzaController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('pizza.home');
 
-Route::get('/pizzas', [PizzaController::class, 'index'])->middleware('auth');
-
-Route::get('/pizzas/create',[PizzaController::class, 'create']);
-
-Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->middleware('auth');
-Route::post('/pizzas',[PizzaController::class, 'store']);
-Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy'])->middleware('auth');
+Route::get('/pizzas', [PizzaController::class, 'index'])->name('pizza.index')->middleware('auth');
+Route::get('/pizzas/create',[PizzaController::class, 'create'])->name('pizza.create');
+Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->name('pizza.show')->middleware('auth');
+Route::post('/pizzas',[PizzaController::class, 'store'])->name('pizza.store');
+Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy'])->name('pizza.destroy')->middleware('auth');
 
 
-Auth::routes();
+Auth::routes(['register'=>false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);

@@ -24,7 +24,7 @@
 
     </div>
 
-    <a href="/pizzas" class="back">
+    <a href="{{ route('pizza.index') }}" class="back normalizer">
 
         <- Back to all pizzas</a>
 
